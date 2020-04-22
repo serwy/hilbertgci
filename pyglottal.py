@@ -7,6 +7,11 @@ __all__ = ['fasthilbert', 'inlier_elim',
        'compare_markings', 'compare_cycles',
        'cycle_stats']
 
+def find(x):
+    # matplotlib deprecated `find` in version 2.2
+    # and removed in 3.1
+    return np.nonzero(np.ravel(x))[0]
+
 def fasthilbert(x):
     # zero-pad to next power of 2...
     L = len(x)
